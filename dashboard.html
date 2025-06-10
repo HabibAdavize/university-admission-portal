@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus University - Student Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Nexus University</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active">
+                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
+                </li>
+                <li>
+                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
+                </li>
+                <li>
+                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+                </li>
+                <li>
+                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-headset"></i> Support</a>
+                </li>
+                <li>
+                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="dashboard-header">
+            <div class="welcome-message">
+                <h2>Welcome back Olamide!</h2>
+                <div class="progress-info">
+                    <p>You have completed <span class="highlight">10%</span> of your registration</p>
+                    <p>Progress is <span class="highlight">very good!</span></p>
+                </div>
+            </div>
+            <div class="user-profile">
+                <img src="images/profile.jpg" alt="User profile" class="profile-image">
+            </div>
+        </div>
+
+        <div class="user-details">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="User profile" class="profile-image-large">
+                <h3>Oloro Olamide Elizabeth</h3>
+                <p>Jamb Reg. No: 202210852261BC</p>
+                <p>Program applied: Information Technology</p>
+                <p>Status: <span class="status-review">In Review</span></p>
+            </div>
+
+            <div class="application-notice">
+                <p>You have not completed your application. Please complete all steps before <span class="highlight">June 30, 2025</span></p>
+            </div>
+
+            <div class="dashboard-cards">
+                <div class="card" onclick="navigateToPage('profile.html')">
+                    <h3>Personal Details</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="navigateToPage('documents.html')">
+                    <h3>Documents</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="navigateToPage('transfer-requests.html')">
+                    <h3>Transfer Request</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                </div>
+                
+                <div class="card" onclick="navigateToPage('fees-receipts.html')">
+                    <h3>Fees & Receipts</h3>
+                    <div class="card-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

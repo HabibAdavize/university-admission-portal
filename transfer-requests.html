@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus University - Transfer Requests</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Nexus University</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
+                </li>
+                <li class="active">
+                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
+                </li>
+                <li>
+                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+                </li>
+                <li>
+                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-headset"></i> Support</a>
+                </li>
+                <li>
+                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="page-header">
+            <div class="header-content">
+                <h1>Transfer Requests</h1>
+                <div class="header-actions">
+                    <div class="session-selector">
+                        <select id="academicSession" onchange="filterBySession()">
+                            <option value="">Select Academic Session</option>
+                            <option value="2024/2025">2024/2025</option>
+                            <option value="2023/2024">2023/2024</option>
+                            <option value="2022/2023">2022/2023</option>
+                        </select>
+                    </div>
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="user-profile">
+                        <img src="images/profile.jpg" alt="User profile" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="transfer-container">
+            <div class="transfer-actions">
+                <button class="btn btn-primary" onclick="openTransferModal()">
+                    <i class="fas fa-plus"></i> New Transfer Request
+                </button>
+            </div>
+
+            <div class="transfer-table-container">
+                <table class="transfer-table">
+                    <thead>
+                        <tr>
+                            <th>Destination Programme</th>
+                            <th>Destination Department</th>
+                            <th>Acceptance Status</th>
+                            <th>Target Level</th>
+                            <th>Session</th>
+                            <th>CGPA</th>
+                            <th>Fee</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transferTableBody">
+                        <tr class="no-data">
+                            <td colspan="8">
+                                <div class="no-data-message">
+                                    <i class="fas fa-inbox"></i>
+                                    <p>No data available</p>
+                                    <small>You haven't made any transfer requests yet</small>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Transfer Request Modal -->
+        <div id="transferModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>New Transfer Request</h3>
+                    <span class="close" onclick="closeTransferModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="transferForm" onsubmit="return submitTransferRequest()">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="currentProgramme">Current Programme</label>
+                                <input type="text" id="currentProgramme" value="Information Technology" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="currentDepartment">Current Department</label>
+                                <input type="text" id="currentDepartment" value="Computer Science" readonly>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="destinationProgramme">Destination Programme *</label>
+                                <select id="destinationProgramme" required>
+                                    <option value="">Select Programme</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Software Engineering">Software Engineering</option>
+                                    <option value="Cybersecurity">Cybersecurity</option>
+                                    <option value="Data Science">Data Science</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="destinationDepartment">Destination Department *</label>
+                                <select id="destinationDepartment" required>
+                                    <option value="">Select Department</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Engineering">Engineering</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="targetLevel">Target Level *</label>
+                                <select id="targetLevel" required>
+                                    <option value="">Select Level</option>
+                                    <option value="100">100 Level</option>
+                                    <option value="200">200 Level</option>
+                                    <option value="300">300 Level</option>
+                                    <option value="400">400 Level</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="transferSession">Session *</label>
+                                <select id="transferSession" required>
+                                    <option value="">Select Session</option>
+                                    <option value="2024/2025">2024/2025</option>
+                                    <option value="2025/2026">2025/2026</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reason">Reason for Transfer *</label>
+                            <textarea id="reason" rows="4" placeholder="Please provide a detailed reason for your transfer request" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="supportingDocuments">Supporting Documents</label>
+                            <input type="file" id="supportingDocuments" multiple accept=".pdf,.jpg,.jpeg,.png">
+                            <small>Upload any supporting documents (Optional)</small>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline" onclick="closeTransferModal()">Cancel</button>
+                    <button type="submit" form="transferForm" class="btn btn-primary">Submit Request</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

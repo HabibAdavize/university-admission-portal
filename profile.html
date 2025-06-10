@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus University - My Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Nexus University</h2>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
+                </li>
+                <li class="active">
+                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
+                </li>
+                <li>
+                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+                </li>
+                <li>
+                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-headset"></i> Support</a>
+                </li>
+                <li>
+                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+        <div class="profile-container">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="profile-image-section">
+                    <img src="images/profile.jpg" alt="Student Profile" class="profile-image-large">
+                </div>
+                <div class="profile-info">
+                    <h1>Oloro Olamide Elizabeth</h1>
+                    <p class="jamb-reg">Jamb Reg. No: 202210852261BC</p>
+                    <p class="program-info">Program applied: Information Technology</p>
+                    <p class="status-info">Status: <span class="status-review">In Review</span></p>
+                </div>
+            </div>
+
+            <!-- Profile Sections -->
+            <div class="profile-sections">
+                <!-- My Profile Section -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <h2>My Profile</h2>
+                    </div>
+                    
+                    <!-- Signature Subsection -->
+                    <div class="subsection">
+                        <div class="subsection-header">
+                            <h3>Signature</h3>
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <div class="signature-area">
+                            <div class="signature-placeholder" onclick="addSignature()">
+                                <i class="fas fa-signature"></i>
+                                <span>Click to add signature</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bio Data Subsection -->
+                    <div class="subsection">
+                        <div class="subsection-header">
+                            <h3>Bio Data</h3>
+                            <button class="edit-btn">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                        </div>
+                        <div class="bio-data-grid">
+                            <div class="data-row">
+                                <div class="data-item">
+                                    <label>Full Name:</label>
+                                    <span>Oloro Olamide Elizabeth</span>
+                                </div>
+                                <div class="data-item">
+                                    <label>Gender:</label>
+                                    <span>Female</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-item">
+                                    <label>Date of Birth:</label>
+                                    <span>2001-11-15</span>
+                                </div>
+                                <div class="data-item">
+                                    <label>Country:</label>
+                                    <span>Nigeria</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-item">
+                                    <label>State of Origin:</label>
+                                    <span>ONDO</span>
+                                </div>
+                                <div class="data-item">
+                                    <label>Local Govt. Area:</label>
+                                    <span>AKOKO-NORTH-WEST</span>
+                                </div>
+                            </div>
+                            <div class="data-row">
+                                <div class="data-item">
+                                    <label><i class="fas fa-phone"></i></label>
+                                    <span>08168652713</span>
+                                </div>
+                                <div class="data-item">
+                                    <label><i class="fas fa-envelope"></i></label>
+                                    <span>oloroolamide@gmail.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next of Kin Section -->
+                <div class="profile-section">
+                    <div class="section-header">
+                        <h2>Next of Kin</h2>
+                        <button class="edit-btn">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                    </div>
+                    <div class="next-of-kin-grid">
+                        <div class="data-row">
+                            <div class="data-item">
+                                <label>Full Name:</label>
+                                <span>Shedrack Jennifer Deborah</span>
+                            </div>
+                            <div class="data-item">
+                                <label>Relationship:</label>
+                                <span>Sister</span>
+                            </div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-item">
+                                <label><i class="fas fa-phone"></i></label>
+                                <span>09018653214</span>
+                            </div>
+                            <div class="data-item">
+                                <label><i class="fas fa-envelope"></i></label>
+                                <span>jenniferdeborah@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="data-row">
+                            <div class="data-item full-width">
+                                <label>Permanent Address:</label>
+                                <span>Lagos State</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
