@@ -194,14 +194,18 @@ nav {
 }
 
 /* Login Page Styles */
-.simple-header {
-    background-color: white;
-    padding: 20px 0;
-}
 
 .login-container {
     display: flex;
-    height: calc(100vh - 70px);
+    height: 100vh;
+}
+.logoo{
+    margin-bottom: 100px;
+}
+.logoo a {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0a0a5e;
 }
 
 .login-form-container {
@@ -234,15 +238,6 @@ nav {
     position: relative;
 }
 
-.form-group label::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 1px;
-    background: #ddd;
-    margin-left: 10px;
-}
 
 .form-group input, .form-group select, .form-group textarea {
     width: 100%;
@@ -342,20 +337,25 @@ nav {
 }
 
 .sidebar-nav ul {
-    padding: 20px 0;
+    padding: 20px 0 20px 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .sidebar-nav li {
     padding: 10px 20px;
     margin: 5px 0;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .sidebar-nav li:hover, .sidebar-nav li.active {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color:white;
+    color: black;
 }
 
 .sidebar-nav li i {
@@ -368,6 +368,7 @@ nav {
     flex: 1;
     margin-left: 250px;
     padding: 20px;
+    background-color: white;
 }
 
 .dashboard-header {
