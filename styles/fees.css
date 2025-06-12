@@ -1,0 +1,160 @@
+/* Fees & Receipts Styles */
+.fees-container {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-section p {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 14px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 60px;
+    top: 27%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.fees-table th,
+.fees-table td {
+    padding: 12px 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.fees-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    position: sticky;
+    top: 0;
+}
+
+.status-badge.paid {
+    background: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.failed {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.action-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.print-receipt {
+    background: #28a745;
+    color: white;
+}
+
+.print-receipt:hover {
+    background: #218838;
+}
+
+.get-status {
+    background: #ffc107;
+    color: #212529;
+}
+
+.get-status:hover {
+    background: #e0a800;
+}
+
+.get-stamp {
+    background: #17a2b8;
+    color: white;
+}
+
+.get-stamp:hover {
+    background: #138496;
+}
+
+.summary-section {
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+
+.summary-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.summary-card h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.amount {
+    font-weight: 600;
+}
+
+.amount.failed {
+    color: #dc3545;
+}
+
+.amount.outstanding {
+    color: #ff6600;
+}
+

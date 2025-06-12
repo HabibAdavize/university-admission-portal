@@ -1,0 +1,109 @@
+/* Progress Steps Styles */
+.progress-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.progress-steps {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress-step {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.progress-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 50px;
+    width: 2px;
+    height: 40px;
+    background-color: #ddd;
+}
+
+.progress-step.completed::after {
+    background-color: #28a745;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.progress-step.completed .step-number {
+    background-color: #28a745;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.step-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.step-info i {
+    color: #666;
+}
+
+.toggle-icon {
+    color: #666;
+    transition: transform 0.3s ease;
+}
+
+.step-header.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.step-details {
+    padding: 15px 0;
+}
+
+.sub-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sub-step:hover {
+    background-color: #f8f9fa;
+}
+
+.sub-step.completed {
+    color: #28a745;
+}
+
+.sub-step i:last-child {
+    margin-left: auto;
+    color: #ccc;
+}

@@ -1,0 +1,113 @@
+/* Responsive Design */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .login-image {
+        display: none;
+    }
+    
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .sidebar {
+        width: 70px;
+        overflow: hidden;
+    }
+    
+    .sidebar-header h2 {
+        display: none;
+    }
+    
+    .sidebar-nav li span {
+        display: none;
+    }
+    
+    .dashboard-main {
+        margin-left: 70px;
+    }
+    
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .data-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .fees-table {
+        font-size: 12px;
+    }
+    
+    .fees-table th,
+    .fees-table td {
+        padding: 8px 4px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .status-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content {
+        padding: 50px 20px;
+    }
+    
+    .search-container {
+        padding: 0 20px 30px;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .welcome-message {
+        margin-bottom: 20px;
+    }
+    
+    .sidebar {
+        width: 60px;
+    }
+    
+    .dashboard-main {
+        margin-left: 60px;
+    }
+}

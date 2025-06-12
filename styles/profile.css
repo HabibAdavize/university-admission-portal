@@ -1,0 +1,156 @@
+/* Profile Page Styles */
+.profile-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    background: linear-gradient(135deg, #0a0a5e 0%, #ff6600 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 0;
+}
+
+.profile-image-section .profile-image-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+.profile-info h1 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+.profile-sections {
+    background: white;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+    padding: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section:last-child {
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ff6600;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: #0a0a5e;
+    font-size: 22px;
+}
+
+.edit-btn {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: #e55a00;
+}
+
+.subsection {
+    margin-bottom: 30px;
+}
+
+.subsection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #ff6600;
+    color: white;
+    border-radius: 6px;
+}
+
+.subsection-header h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.signature-area {
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 6px;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.signature-placeholder {
+    color: #666;
+    cursor: pointer;
+}
+
+.signature-placeholder i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.bio-data-grid, .next-of-kin-grid {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.data-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.data-row:last-child {
+    margin-bottom: 0;
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.data-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.data-item label {
+    font-weight: 600;
+    color: #666;
+    font-size: 14px;
+}
+
+.data-item span {
+    color: #333;
+    font-size: 16px;
+}
+

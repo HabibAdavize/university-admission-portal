@@ -1,0 +1,98 @@
+/* Admission Status Styles */
+.admission-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.status-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    color: #0a0a5e;
+    border-bottom-color: #0a0a5e;
+}
+
+.tab-button:hover {
+    color: #0a0a5e;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.status-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.status-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+}
+
+.not-admitted-icon {
+    color: #dc3545;
+}
+
+.in-review-icon {
+    color: #ffc107;
+}
+
+.admitted-icon {
+    color: #28a745;
+}
+
+.status-message h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.status-message p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.print-button {
+    background-color: #0a0a5e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.print-button:hover:not(:disabled) {
+    background-color: #080845;
+}
+
+.print-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
