@@ -1,4 +1,4 @@
-/* Admission Status Styles */
+
 .admission-container {
     background-color: white;
     border-radius: 8px;
@@ -96,15 +96,74 @@
     cursor: not-allowed;
 }
 
-/* Responsive Admission Status */
+/* Responsive Admission Status (Fix & Improve) */
 @media (max-width: 768px) {
-  .admission-status-container {
-    padding: 10px;
+  .admission-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 12px;
+    border-radius: 0;
+    box-shadow: none;
   }
-  .status-table th,
-  .status-table td {
-    padding: 8px 4px;
-    font-size: 13px;
+
+  .status-tabs {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+    gap: 8px;
+    border-bottom: none;
+  }
+
+  .tab-button {
+    padding: 12px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 6px;
+  }
+
+  .tab-button.active {
+    border-color: #0a0a5e;
+    background: #f2f2f8;
+  }
+
+  .status-message {
+    padding: 30px 10px;
+  }
+
+  .status-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .status-message h2 {
+    font-size: 18px;
+  }
+
+  .status-message p {
+    font-size: 15px;
+  }
+
+  .print-button {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
   }
 }
 
+@media (max-width: 480px) {
+  .status-message h2 {
+    font-size: 16px;
+  }
+
+  .status-message p {
+    font-size: 14px;
+  }
+
+  .tab-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
