@@ -1,133 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus University - Payments</title>
-    <link rel="stylesheet" href="styles/payment.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dashboard-body">
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Nexus University</h2>
-        </div>
-        
-        <nav class="sidebar-nav">
-            <ul>
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
-                </li>
-                <li>
-                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
-                </li>
-                <li class="active">
-                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
-                </li>
-                <li>
-                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-headset"></i> Support</a>
-                </li>
-                <li>
-                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <link rel="stylesheet" href="styles/payment.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-body">
+   <div id="sidebar-placeholder"></div>
 
     <main class="dashboard-main">
-        <div class="page-header">
-            <div class="header-content">
-                <h1>Select Payment Option</h1>
-                <div class="header-actions">
-                    <div class="notification-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <div class="user-profile">
-                        <img src="images/profile.png" alt="User profile" class="profile-image">
-                    </div>
-                </div>
+      <div class="page-header">
+        <div class="header-content">
+          <h1>Select Payment Option</h1>
+          <div class="header-actions">
+            <div class="notification-icon">
+              <i class="fas fa-bell"></i>
             </div>
-            <p class="security-notice">All transactions are secure and encrypted</p>
+            <div class="user-profile">
+              <img
+                src="images/profile.png"
+                alt="User profile"
+                class="profile-image"
+              />
+            </div>
+          </div>
         </div>
+        <p class="security-notice">All transactions are secure and encrypted</p>
+      </div>
 
-        <div class="payment-container">
-            <form id="paymentForm" onsubmit="return validatePaymentForm()">
-                <!-- PayPal Option -->
-                <div class="payment-option">
-                    <input type="radio" id="paypal" name="paymentMethod" value="paypal">
-                    <label for="paypal" class="payment-label">
-                        <span>Paypal</span>
-                        <img src="images/paypal-icn.svg" alt="PayPal logo" class="payment-logo">
-                    </label>
+      <div class="payment-container">
+        <form id="paymentForm" onsubmit="return validatePaymentForm()">
+          <!-- PayPal Option -->
+          <div class="payment-option">
+            <input
+              type="radio"
+              id="paypal"
+              name="paymentMethod"
+              value="paypal"
+            />
+            <label for="paypal" class="payment-label">
+              <span>Paypal</span>
+              <img
+                src="images/paypal-icn.svg"
+                alt="PayPal logo"
+                class="payment-logo"
+              />
+            </label>
+          </div>
+
+          <!-- Credit Card Option -->
+          <div class="payment-option">
+            <input
+              type="radio"
+              id="creditcard"
+              name="paymentMethod"
+              value="creditcard"
+              checked
+            />
+            <label for="creditcard" class="payment-label">
+              <span>Credit card</span>
+              <div class="card-logos">
+                <img
+                  src="images/visa-icn.svg"
+                  alt="MasterCard logo"
+                  class="card-logo"
+                />
+                <img
+                  src="images/card-icn.svg"
+                  alt="Visa logo"
+                  class="card-logo"
+                />
+                <img
+                  src="images/mastercard-icn.svg"
+                  alt="Discover logo"
+                  class="card-logo"
+                />
+              </div>
+            </label>
+            <div class="payment-details" id="creditcard-details">
+              <p class="payment-subtitle">
+                Pay securely using your Visa, MasterCard
+              </p>
+
+              <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <div class="card-input">
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    name="cardNumber"
+                    placeholder="1234 5678 1113 0156"
+                    maxlength="19"
+                  />
+                  <i class="fas fa-credit-card"></i>
                 </div>
+              </div>
 
-                <!-- Credit Card Option -->
-                <div class="payment-option">
-                    <input type="radio" id="creditcard" name="paymentMethod" value="creditcard" checked>
-                    <label for="creditcard" class="payment-label">
-                        <span>Credit card</span>
-                        <div class="card-logos">
-                            <img src="images/visa-icn.svg" alt="MasterCard logo" class="card-logo">
-                            <img src="images/card-icn.svg" alt="Visa logo" class="card-logo">
-                            <img src="images/mastercard-icn.svg" alt="Discover logo" class="card-logo">
-                        </div>
-                    </label>
-                    <div class="payment-details" id="creditcard-details">
-                        <p class="payment-subtitle">Pay securely using your Visa, MasterCard</p>
-                        
-                        <div class="form-group">
-                            <label for="cardNumber">Card Number</label>
-                            <div class="card-input">
-                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 1113 0156" maxlength="19">
-                                <i class="fas fa-credit-card"></i>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cardName">Name on card</label>
-                                <input type="text" id="cardName" name="cardName" placeholder="Card name">
-                            </div>
-                            <div class="form-group">
-                                <label for="expiryDate">Expiry date</label>
-                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" maxlength="5">
-                            </div>
-                            <div class="form-group">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="4">
-                            </div>
-                        </div>
-                    </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cardName">Name on card</label>
+                  <input
+                    type="text"
+                    id="cardName"
+                    name="cardName"
+                    placeholder="Card name"
+                  />
                 </div>
-
-                <!-- Google Pay Option -->
-                <div class="payment-option">
-                    <input type="radio" id="googlepay" name="paymentMethod" value="googlepay">
-                    <label for="googlepay" class="payment-label">
-                        <span>Google pay</span>
-                        <img src="images/gpay-icn.svg" alt="Google Pay logo" class="payment-logo">
-                    </label>
+                <div class="form-group">
+                  <label for="expiryDate">Expiry date</label>
+                  <input
+                    type="text"
+                    id="expiryDate"
+                    name="expiryDate"
+                    placeholder="MM/YY"
+                    maxlength="5"
+                  />
                 </div>
-
-                <button type="submit" class="pay-button">Pay ₦138,000.00</button>
-
-                <div class="terms-checkbox">
-                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                    <label for="agreeTerms">
-                        By clicking this, I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
-                    </label>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    placeholder="CVV"
+                    maxlength="4"
+                  />
                 </div>
-            </form>
-        </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Pay Option -->
+          <div class="payment-option">
+            <input
+              type="radio"
+              id="googlepay"
+              name="paymentMethod"
+              value="googlepay"
+            />
+            <label for="googlepay" class="payment-label">
+              <span>Google pay</span>
+              <img
+                src="images/gpay-icn.svg"
+                alt="Google Pay logo"
+                class="payment-logo"
+              />
+            </label>
+          </div>
+
+          <button type="submit" class="pay-button">Pay ₦138,000.00</button>
+
+          <div class="terms-checkbox">
+            <input type="checkbox" id="agreeTerms" name="agreeTerms" required />
+            <label for="agreeTerms">
+              By clicking this, I agree to the
+              <a href="#">Terms & Conditions</a> and
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+        </form>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

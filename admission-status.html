@@ -1,98 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus University - Admission Status</title>
-    <link rel="stylesheet" href="styles/admission-status.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dashboard-body">
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Nexus University</h2>
-        </div>
-        
-        <nav class="sidebar-nav">
-            <ul>
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
-                </li>
-                <li>
-                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
-                </li>
-                <li>
-                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
-                </li>
-                <li class="active">
-                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-headset"></i> Support</a>
-                </li>
-                <li>
-                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-
+    <link rel="stylesheet" href="styles/admission-status.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div id="sidebar-placeholder"></div>
     <main class="dashboard-main">
-        <div class="page-header">
-            <div class="header-content">
-                <h1>Admission Status</h1>
-                <div class="header-actions">
-                    <div class="notification-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <div class="user-profile">
-                        <img src="images/profile.png" alt="User profile" class="profile-image">
-                    </div>
-                </div>
+      <div class="page-header">
+        <div class="header-content">
+          <h1>Admission Status</h1>
+          <div class="header-actions">
+            <div class="notification-icon">
+              <i class="fas fa-bell"></i>
             </div>
+            <div class="user-profile">
+              <img
+                src="images/profile.png"
+                alt="User profile"
+                class="profile-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admission-container">
+        <div class="status-tabs">
+          <button class="tab-button" onclick="switchTab('not-admitted')">
+            Not Admitted
+          </button>
+          <button class="tab-button active" onclick="switchTab('in-review')">
+            In review
+          </button>
+          <button class="tab-button" onclick="switchTab('admitted')">
+            Admitted
+          </button>
         </div>
 
-        <div class="admission-container">
-            <div class="status-tabs">
-                <button class="tab-button" onclick="switchTab('not-admitted')">Not Admitted</button>
-                <button class="tab-button active" onclick="switchTab('in-review')">In review</button>
-                <button class="tab-button" onclick="switchTab('admitted')">Admitted</button>
+        <div class="status-content">
+          <div id="not-admitted" class="tab-content">
+            <div class="status-message">
+              <i class="fas fa-times-circle status-icon not-admitted-icon"></i>
+              <h2>Application Not Admitted</h2>
+              <p>
+                Your application has not been admitted at this time. Please
+                contact support for more information.
+              </p>
             </div>
+          </div>
 
-            <div class="status-content">
-                <div id="not-admitted" class="tab-content">
-                    <div class="status-message">
-                        <i class="fas fa-times-circle status-icon not-admitted-icon"></i>
-                        <h2>Application Not Admitted</h2>
-                        <p>Your application has not been admitted at this time. Please contact support for more information.</p>
-                    </div>
-                </div>
-
-                <div id="in-review" class="tab-content active">
-                    <div class="status-message">
-                        <i class="fas fa-clock status-icon in-review-icon"></i>
-                        <h2>Application Under Review</h2>
-                        <p>Your application is currently being reviewed by our admissions committee. You will be notified once a decision has been made.</p>
-                        <button class="print-button disabled" disabled>Print Admission Letter</button>
-                    </div>
-                </div>
-
-                <div id="admitted" class="tab-content">
-                    <div class="status-message">
-                        <i class="fas fa-check-circle status-icon admitted-icon"></i>
-                        <h2>Congratulations! You've Been Admitted</h2>
-                        <p>Your application has been successfully reviewed and you have been admitted to Nexus University.</p>
-                        <button class="print-button" onclick="printAdmissionLetter()">Print Admission Letter</button>
-                    </div>
-                </div>
+          <div id="in-review" class="tab-content active">
+            <div class="status-message">
+              <i class="fas fa-clock status-icon in-review-icon"></i>
+              <h2>Application Under Review</h2>
+              <p>
+                Your application is currently being reviewed by our admissions
+                committee. You will be notified once a decision has been made.
+              </p>
+              <button class="print-button disabled" disabled>
+                Print Admission Letter
+              </button>
             </div>
+          </div>
+
+          <div id="admitted" class="tab-content">
+            <div class="status-message">
+              <i class="fas fa-check-circle status-icon admitted-icon"></i>
+              <h2>Congratulations! You've Been Admitted</h2>
+              <p>
+                Your application has been successfully reviewed and you have
+                been admitted to Nexus University.
+              </p>
+              <button class="print-button" onclick="printAdmissionLetter()">
+                Print Admission Letter
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

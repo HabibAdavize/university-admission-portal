@@ -69,3 +69,15 @@
     font-size: 14px;
 }
 
+/* Responsive Transfer Requests */
+@media (max-width: 768px) {
+  .transfer-container {
+    padding: 10px;
+  }
+  .transfer-table th,
+  .transfer-table td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+}
+

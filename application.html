@@ -1,147 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus University - Application</title>
-    <link rel="stylesheet" href="styles/application.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dashboard-body">
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Nexus University</h2>
-        </div>
-        
-        <nav class="sidebar-nav">
-            <ul>
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
-                </li>
-                <li class="active">
-                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
-                </li>
-                <li>
-                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
-                </li>
-                <li>
-                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-headset"></i> Support</a>
-                </li>
-                <li>
-                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <link rel="stylesheet" href="styles/application.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div id="sidebar-placeholder"></div>
 
     <main class="dashboard-main">
-        <div class="page-header">
-            <div class="header-content">
-                <h1>My Progress</h1>
-                <div class="header-actions">
-                    <div class="notification-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <div class="user-profile">
-                        <img src="images/profile.png" alt="User profile" class="profile-image">
-                    </div>
-                </div>
+      <div class="page-header">
+        <div class="header-content">
+          <h1>My Progress</h1>
+          <div class="header-actions">
+            <div class="notification-icon">
+              <i class="fas fa-bell"></i>
             </div>
-        </div>
-
-        <div class="progress-container">
-            <div class="progress-steps">
-                <!-- Step 1 -->
-                <div class="progress-step completed">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <div class="step-header" onclick="toggleStep(1)">
-                            <div class="step-info">
-                                <i class="fas fa-user"></i>
-                                <span>Complete profile and upload documents</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="step-details" id="step-1-details">
-                            <div class="sub-step completed" onclick="navigateToPage('profile.html')">
-                                <i class="fas fa-check-circle"></i>
-                                <i class="fas fa-user"></i>
-                                <span>Personal information</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                            <div class="sub-step" onclick="navigateToPage('documents.html')">
-                                <i class="fas fa-file-alt"></i>
-                                <span>Documents</span>
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="progress-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <div class="step-header" onclick="toggleStep(2)">
-                            <div class="step-info">
-                                <i class="fas fa-book"></i>
-                                <span>Explore courses</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="step-details" id="step-2-details" style="display: none;">
-                            <p>Browse and select your preferred courses for the academic session.</p>
-                            <button class="btn btn-primary" onclick="navigateToPage('program.html')">View Courses</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="progress-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <div class="step-header" onclick="toggleStep(3)">
-                            <div class="step-info">
-                                <i class="fas fa-credit-card"></i>
-                                <span>Payment</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="step-details" id="step-3-details" style="display: none;">
-                            <p>Complete your tuition payment to proceed with registration.</p>
-                            <button class="btn btn-primary" onclick="navigateToPage('payments.html')">Make Payment</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="progress-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <div class="step-header" onclick="toggleStep(4)">
-                            <div class="step-info">
-                                <i class="fas fa-print"></i>
-                                <span>Print admission letter</span>
-                            </div>
-                            <i class="fas fa-chevron-down toggle-icon"></i>
-                        </div>
-                        <div class="step-details" id="step-4-details" style="display: none;">
-                            <p>Download and print your official admission letter.</p>
-                            <button class="btn btn-primary" onclick="navigateToPage('admission-status.html')">Check Status</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="user-profile">
+              <img
+                src="images/profile.png"
+                alt="User profile"
+                class="profile-image"
+              />
             </div>
+          </div>
         </div>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-steps">
+          <!-- Step 1 -->
+          <div class="progress-step completed">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <div class="step-header" onclick="toggleStep(1)">
+                <div class="step-info">
+                  <i class="fas fa-user"></i>
+                  <span>Complete profile and upload documents</span>
+                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+              </div>
+              <div class="step-details" id="step-1-details">
+                <div
+                  class="sub-step completed"
+                  onclick="navigateToPage('profile.html')"
+                >
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-user"></i>
+                  <span>Personal information</span>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+                <div
+                  class="sub-step"
+                  onclick="navigateToPage('documents.html')"
+                >
+                  <i class="fas fa-file-alt"></i>
+                  <span>Documents</span>
+                  <i class="fas fa-chevron-right"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="progress-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <div class="step-header" onclick="toggleStep(2)">
+                <div class="step-info">
+                  <i class="fas fa-book"></i>
+                  <span>Explore courses</span>
+                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+              </div>
+              <div
+                class="step-details"
+                id="step-2-details"
+                style="display: none"
+              >
+                <p>
+                  Browse and select your preferred courses for the academic
+                  session.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onclick="navigateToPage('program.html')"
+                >
+                  View Courses
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="progress-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <div class="step-header" onclick="toggleStep(3)">
+                <div class="step-info">
+                  <i class="fas fa-credit-card"></i>
+                  <span>Payment</span>
+                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+              </div>
+              <div
+                class="step-details"
+                id="step-3-details"
+                style="display: none"
+              >
+                <p>
+                  Complete your tuition payment to proceed with registration.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onclick="navigateToPage('payments.html')"
+                >
+                  Make Payment
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="progress-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <div class="step-header" onclick="toggleStep(4)">
+                <div class="step-info">
+                  <i class="fas fa-print"></i>
+                  <span>Print admission letter</span>
+                </div>
+                <i class="fas fa-chevron-down toggle-icon"></i>
+              </div>
+              <div
+                class="step-details"
+                id="step-4-details"
+                style="display: none"
+              >
+                <p>Download and print your official admission letter.</p>
+                <button
+                  class="btn btn-primary"
+                  onclick="navigateToPage('admission-status.html')"
+                >
+                  Check Status
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

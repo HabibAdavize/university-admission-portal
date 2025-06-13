@@ -120,3 +120,15 @@
     object-fit: cover;
 }
 
+/* Responsive Login */
+@media (max-width: 576px) {
+  .login-container {
+    padding: 10px;
+    width: 100%;
+    min-width: unset;
+  }
+  .login-form {
+    padding: 10px;
+  }
+}
+

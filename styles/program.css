@@ -82,3 +82,26 @@
     background-color: #f8f9fa;
     border-radius: 4px;
 }
+
+/* Responsive Program/Courses */
+@media (max-width: 768px) {
+  .courses-container {
+    padding: 10px;
+  }
+  .semester-title {
+    font-size: 15px;
+    padding: 8px;
+  }
+  .courses-table th,
+  .courses-table td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  .registration-notice {
+    padding: 10px;
+    font-size: 13px;
+  }
+}

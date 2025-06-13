@@ -158,3 +158,24 @@
     color: #ff6600;
 }
 
+/* Responsive Fees Table */
+@media (max-width: 768px) {
+  .fees-container {
+    padding: 10px;
+  }
+  .fees-table {
+    font-size: 12px;
+    overflow-x: auto;
+    display: block;
+  }
+  .fees-table th,
+  .fees-table td {
+    padding: 8px 4px;
+    white-space: nowrap;
+  }
+  .summary-card {
+    padding: 10px;
+    max-width: 100%;
+  }
+}
+

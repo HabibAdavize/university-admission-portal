@@ -112,3 +112,15 @@
     color: #666;
 }
 
+/* Responsive Documents */
+@media (max-width: 768px) {
+  .documents-container {
+    padding: 10px;
+  }
+  .documents-table th,
+  .documents-table td {
+    padding: 8px 4px;
+    font-size: 13px;
+  }
+}
+

@@ -1,189 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nexus University - Fees & Receipts</title>
-    <link rel="stylesheet" href="styles/fees.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dashboard-body">
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Nexus University</h2>
-        </div>
-        
-        <nav class="sidebar-nav">
-            <ul>
-                <li>
-                    <a href="dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="program.html"><i class="fas fa-graduation-cap"></i> Program</a>
-                </li>
-                <li>
-                    <a href="application.html"><i class="fas fa-file-alt"></i> Application</a>
-                </li>
-                <li class="active">
-                    <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
-                </li>
-                <li>
-                    <a href="admission-status.html"><i class="fas fa-clipboard-check"></i> Admission status</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-headset"></i> Support</a>
-                </li>
-                <li>
-                    <a href="index.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
+    <link rel="stylesheet" href="styles/fees.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div id="sidebar-placeholder"></div>
 
     <main class="dashboard-main">
-        <div class="page-header">
-            <div class="header-content">
-                <h1>Fees & Receipts</h1>
-                <div class="header-actions">
-                    <div class="notification-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <div class="user-profile">
-                        <img src="images/profile.png" alt="User profile" class="profile-image">
-                    </div>
-                </div>
+      <div class="page-header">
+        <div class="header-content">
+          <h1>Fees & Receipts</h1>
+          <div class="header-actions">
+            <div class="notification-icon">
+              <i class="fas fa-bell"></i>
             </div>
-            <div class="search-section">
-                <p>Transaction Ref./Email/GSM No.</p>
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search" onkeyup="searchTransactions()">
-                    <i class="fas fa-search search-icon"></i>
-                </div>
+            <div class="user-profile">
+              <img
+                src="images/profile.png"
+                alt="User profile"
+                class="profile-image"
+              />
             </div>
+          </div>
+        </div>
+        <div class="search-section">
+          <p>Transaction Ref./Email/GSM No.</p>
+          <div class="search-container">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search"
+              onkeyup="searchTransactions()"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="fees-container">
+        <div class="table-container">
+          <table class="fees-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Transaction ID</th>
+                <th>Amount (Naira)</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Resource</th>
+                <th>Action</th>
+                <th>Gateway</th>
+              </tr>
+            </thead>
+            <tbody id="feesTableBody">
+              <tr>
+                <td>1</td>
+                <td>202419127483372</td>
+                <td>₦2,000.00</td>
+                <td>24/06/2024</td>
+                <td><span class="status-badge paid">PAID (Used)</span></td>
+                <td>Post-UTME Screening Form</td>
+                <td>
+                  <button
+                    class="action-btn print-receipt"
+                    onclick="printReceipt('202419127483372')"
+                  >
+                    Print Receipt
+                  </button>
+                </td>
+                <td>Remita</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>202419127803628</td>
+                <td>₦3,000.00</td>
+                <td>28/06/2024</td>
+                <td><span class="status-badge paid">PAID (Used)</span></td>
+                <td>Screening Result Printing Fee</td>
+                <td>
+                  <button
+                    class="action-btn print-receipt"
+                    onclick="printReceipt('202419127803628')"
+                  >
+                    Print Receipt
+                  </button>
+                </td>
+                <td>Remita</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>202520F3K4F5G6H7</td>
+                <td>₦25,000.00</td>
+                <td>10/07/2024</td>
+                <td><span class="status-badge paid">PAID (Used)</span></td>
+                <td>Acceptance Fee</td>
+                <td>
+                  <button
+                    class="action-btn print-receipt"
+                    onclick="printReceipt('202520F3K4F5G6H7')"
+                  >
+                    Print Receipt
+                  </button>
+                </td>
+                <td>Remita</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>202534253K4E273</td>
+                <td>₦5,000.00</td>
+                <td>06/01/2025</td>
+                <td>
+                  <span class="status-badge failed">Failed - Declined</span>
+                </td>
+                <td>Correction of Data</td>
+                <td>
+                  <button
+                    class="action-btn get-status"
+                    onclick="getStatus('202534253K4E273')"
+                  >
+                    Get Status
+                  </button>
+                </td>
+                <td>Unified Payment</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>202552K3M2K2K46</td>
+                <td>₦5,000.00</td>
+                <td>06/01/2025</td>
+                <td>
+                  <span class="status-badge failed"
+                    >Failed - Declined PAID (Used)</span
+                  >
+                </td>
+                <td>Correction of Data</td>
+                <td>
+                  <button
+                    class="action-btn get-status"
+                    onclick="getStatus('202552K3M2K2K46')"
+                  >
+                    Get Status
+                  </button>
+                </td>
+                <td>Unified Payment</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>202517924283761</td>
+                <td>₦6,000.00</td>
+                <td>15/01/2025</td>
+                <td><span class="status-badge paid">PAID (Used)</span></td>
+                <td>Correction of Data</td>
+                <td>
+                  <button
+                    class="action-btn get-stamp"
+                    onclick="getStamp('202517924283761')"
+                  >
+                    Get Stamp
+                  </button>
+                </td>
+                <td>Remita</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>202550H4474H8392</td>
+                <td>₦90,000.00</td>
+                <td>27/04/2025</td>
+                <td>
+                  <span class="status-badge failed"
+                    >Failed - Declined PAID (Used)</span
+                  >
+                </td>
+                <td>Acceptance Fee</td>
+                <td>
+                  <button
+                    class="action-btn get-status"
+                    onclick="getStatus('202550H4474H8392')"
+                  >
+                    Get Status
+                  </button>
+                </td>
+                <td>Unified Payment</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>202524K3G3K4Z836</td>
+                <td>₦60,000.00</td>
+                <td>23/06/2025</td>
+                <td>
+                  <span class="status-badge failed">Failed - Declined</span>
+                </td>
+                <td>Admission Letter</td>
+                <td>
+                  <button
+                    class="action-btn get-status"
+                    onclick="getStatus('202524K3G3K4Z836')"
+                  >
+                    Get Status
+                  </button>
+                </td>
+                <td>Remita</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div class="fees-container">
-            <div class="table-container">
-                <table class="fees-table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Transaction ID</th>
-                            <th>Amount (Naira)</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Resource</th>
-                            <th>Action</th>
-                            <th>Gateway</th>
-                        </tr>
-                    </thead>
-                    <tbody id="feesTableBody">
-                        <tr>
-                            <td>1</td>
-                            <td>202419127483372</td>
-                            <td>₦2,000.00</td>
-                            <td>24/06/2024</td>
-                            <td><span class="status-badge paid">PAID (Used)</span></td>
-                            <td>Post-UTME Screening Form</td>
-                            <td><button class="action-btn print-receipt" onclick="printReceipt('202419127483372')">Print Receipt</button></td>
-                            <td>Remita</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>202419127803628</td>
-                            <td>₦3,000.00</td>
-                            <td>28/06/2024</td>
-                            <td><span class="status-badge paid">PAID (Used)</span></td>
-                            <td>Screening Result Printing Fee</td>
-                            <td><button class="action-btn print-receipt" onclick="printReceipt('202419127803628')">Print Receipt</button></td>
-                            <td>Remita</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>202520F3K4F5G6H7</td>
-                            <td>₦25,000.00</td>
-                            <td>10/07/2024</td>
-                            <td><span class="status-badge paid">PAID (Used)</span></td>
-                            <td>Acceptance Fee</td>
-                            <td><button class="action-btn print-receipt" onclick="printReceipt('202520F3K4F5G6H7')">Print Receipt</button></td>
-                            <td>Remita</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>202534253K4E273</td>
-                            <td>₦5,000.00</td>
-                            <td>06/01/2025</td>
-                            <td><span class="status-badge failed">Failed - Declined</span></td>
-                            <td>Correction of Data</td>
-                            <td><button class="action-btn get-status" onclick="getStatus('202534253K4E273')">Get Status</button></td>
-                            <td>Unified Payment</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>202552K3M2K2K46</td>
-                            <td>₦5,000.00</td>
-                            <td>06/01/2025</td>
-                            <td><span class="status-badge failed">Failed - Declined PAID (Used)</span></td>
-                            <td>Correction of Data</td>
-                            <td><button class="action-btn get-status" onclick="getStatus('202552K3M2K2K46')">Get Status</button></td>
-                            <td>Unified Payment</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>202517924283761</td>
-                            <td>₦6,000.00</td>
-                            <td>15/01/2025</td>
-                            <td><span class="status-badge paid">PAID (Used)</span></td>
-                            <td>Correction of Data</td>
-                            <td><button class="action-btn get-stamp" onclick="getStamp('202517924283761')">Get Stamp</button></td>
-                            <td>Remita</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>202550H4474H8392</td>
-                            <td>₦90,000.00</td>
-                            <td>27/04/2025</td>
-                            <td><span class="status-badge failed">Failed - Declined PAID (Used)</span></td>
-                            <td>Acceptance Fee</td>
-                            <td><button class="action-btn get-status" onclick="getStatus('202550H4474H8392')">Get Status</button></td>
-                            <td>Unified Payment</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>202524K3G3K4Z836</td>
-                            <td>₦60,000.00</td>
-                            <td>23/06/2025</td>
-                            <td><span class="status-badge failed">Failed - Declined</span></td>
-                            <td>Admission Letter</td>
-                            <td><button class="action-btn get-status" onclick="getStatus('202524K3G3K4Z836')">Get Status</button></td>
-                            <td>Remita</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Summary Section -->
+        <div class="summary-section">
+          <div class="summary-card">
+            <h3>Payment Summary</h3>
+            <div class="summary-item">
+              <span>Total Paid:</span>
+              <span class="amount">₦101,000.00</span>
             </div>
-
-            <!-- Summary Section -->
-            <div class="summary-section">
-                <div class="summary-card">
-                    <h3>Payment Summary</h3>
-                    <div class="summary-item">
-                        <span>Total Paid:</span>
-                        <span class="amount">₦101,000.00</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Failed Payments:</span>
-                        <span class="amount failed">₦160,000.00</span>
-                    </div>
-                    <div class="summary-item">
-                        <span>Outstanding Balance:</span>
-                        <span class="amount outstanding">₦37,000.00</span>
-                    </div>
-                </div>
+            <div class="summary-item">
+              <span>Failed Payments:</span>
+              <span class="amount failed">₦160,000.00</span>
             </div>
+            <div class="summary-item">
+              <span>Outstanding Balance:</span>
+              <span class="amount outstanding">₦37,000.00</span>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
