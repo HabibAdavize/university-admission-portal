@@ -116,7 +116,7 @@ window.addEventListener("resize", () => {
   }
 });
 
-// Optional: Reset on page show (for back/forward navigation)
+// Reset on page show (for back/forward navigation)
 window.addEventListener("pageshow", () => {
   const sidebar = document.querySelector(".sidebar");
   const backdrop = document.querySelector(".sidebar-backdrop");
