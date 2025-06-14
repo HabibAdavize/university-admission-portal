@@ -1,4 +1,3 @@
-/* Dashboard Styles */
 
 .dashboard-header {
   background-color: white;
@@ -101,7 +100,7 @@
   background-color: #f0f0ff;
 }
 
-/* Responsive Dashboard */
+/* Responsiveness */
 
 @media (max-width: 992px) {
   .dashboard-header {

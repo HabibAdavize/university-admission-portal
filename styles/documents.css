@@ -1,4 +1,4 @@
-/* Documents Page Styles */
+
 .documents-container {
     background: white;
     border-radius: 12px;
@@ -112,7 +112,7 @@
     color: #666;
 }
 
-/* Responsive Documents */
+/* Responsiveness */
 @media (max-width: 768px) {
   .documents-container {
     padding: 10px;

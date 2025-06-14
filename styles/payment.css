@@ -1,4 +1,4 @@
-/* Payment Styles */
+
 .payment-container {
     background-color: white;
     border-radius: 8px;
@@ -133,7 +133,7 @@
     text-decoration: underline;
 }
 
-/* Responsive Payment */
+/* Responsiveness */
 @media (max-width: 768px) {
   .dashboard-main {
     padding: 10px;

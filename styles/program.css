@@ -1,4 +1,4 @@
-/* Courses Table Styles */
+
 .courses-container {
     background-color: white;
     border-radius: 8px;
@@ -83,7 +83,7 @@
     border-radius: 4px;
 }
 
-/* Responsive Program/Courses */
+/* Responsiveness */
 @media (max-width: 768px) {
   .courses-container {
     padding: 10px;

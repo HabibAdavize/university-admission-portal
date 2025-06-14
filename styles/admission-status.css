@@ -96,7 +96,7 @@
     cursor: not-allowed;
 }
 
-/* Responsive Admission Status (Fix & Improve) */
+/* Responsiveness*/
 @media (max-width: 768px) {
   .admission-container {
     width: 100%;

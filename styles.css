@@ -194,7 +194,7 @@ nav.main-nav {
   }
 }
 
-/* ========= BASE SIDEBAR STYLES (Mobile-first) ========= */
+/* BASE SIDEBAR STYLES (Mobile-first) */
 .sidebar {
   position: fixed;
   top: 0;
@@ -217,7 +217,7 @@ nav.main-nav {
   left: 0;
 }
 
-/* ========= SIDEBAR NAVIGATION ========= */
+/* SIDEBAR NAVIGATION */
 .sidebar-header {
   padding: 30px 20px;
   font-size: 18px;
@@ -272,7 +272,7 @@ nav.main-nav {
 }
 
 
-/* ========= TOGGLE BUTTON (mobile only) ========= */
+/* TOGGLE BUTTON (mobile only) */
 .sidebar-toggle-btn {
   display: block;
   position: fixed;
@@ -293,7 +293,7 @@ nav.main-nav {
   transition: opacity 0.2s ease;
 }
 
-/* ========= BACKDROP ========= */
+/* BACKDROP */
 .sidebar-backdrop {
   display: none;
   position: fixed;
@@ -309,7 +309,7 @@ nav.main-nav {
   display: block;
 }
 
-/* ========= DESKTOP VIEW ========= */
+/*  DESKTOP VIEW */
 @media (min-width: 769px) {
   .sidebar {
     left: 0;
@@ -524,7 +524,7 @@ nav.main-nav {
 }
 
 /* =========================
-   Responsive Design
+   Responsive Designs
    ========================= */
 
 :root {
@@ -535,7 +535,7 @@ nav.main-nav {
   --transition: all 0.3s ease;
 }
 
-/* Adjust dashboard layout for tablets */
+/* Adjusted dashboard layout for tablets */
 @media (max-width: 992px) {
   .dashboard-main {
     padding: 15px;
@@ -548,7 +548,7 @@ nav.main-nav {
   }
 }
 
-/* Adjust for mobile screens */
+/* Adjusted for mobile screens */
 @media (max-width: 768px) {
   .dashboard-main {
     padding: 10px;
@@ -602,7 +602,7 @@ nav.main-nav {
 
 @media (min-width: 769px) {
   .dashboard-main {
-    margin-left: 250px; /* same as your sidebar width */
+    margin-left: 250px;
   }
 }
 
@@ -638,7 +638,7 @@ nav.main-nav {
   }
 }
 
-/* Make tables scrollable on mobile */
+/* Makes tables scrollable on mobile */
 @media (max-width: 768px) {
   .table-container,
   .fees-table {
@@ -647,7 +647,7 @@ nav.main-nav {
   }
 }
 
-/* Utility: Hide elements on mobile */
+/* Utility: Hides elements on mobile */
 @media (max-width: 576px) {
   .hide-mobile {
     display: none !important;

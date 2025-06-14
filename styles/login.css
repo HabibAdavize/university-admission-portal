@@ -1,4 +1,3 @@
-/* Login Page Styles */
 
 .login-container {
     display: flex;
@@ -120,6 +119,7 @@
     object-fit: cover;
 }
 
+/* Responsiveness */
 @media (max-width: 768px) {
   .login-container {
     flex-direction: column;

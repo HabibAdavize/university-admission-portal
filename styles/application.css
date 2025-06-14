@@ -1,4 +1,4 @@
-/* Progress Steps Styles */
+
 .progress-container {
     background-color: white;
     border-radius: 8px;
@@ -108,7 +108,7 @@
     color: #ccc;
 }
 
-/* Responsive Application Steps */
+/* Responsiveness */
 @media (max-width: 768px) {
   .dashboard-main {
     padding: 10px;

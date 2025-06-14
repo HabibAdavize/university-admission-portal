@@ -1,4 +1,4 @@
-/* Transfer Requests Styles */
+
 .transfer-container {
     background: white;
     border-radius: 12px;
@@ -69,7 +69,7 @@
     font-size: 14px;
 }
 
-/* Responsive Transfer Requests */
+/* Responsiveness */
 @media (max-width: 768px) {
   .transfer-container {
     padding: 10px;
